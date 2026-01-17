@@ -1,0 +1,59 @@
+@font-face {
+	font-family: "Poor";
+	src: url(assets/ScholarlyAmbitionRegular-PKdwB.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poor";
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 40px 20px 0 20px;
+}
+
+.container .heading {
+	width: 50%;
+}
+
+img {
+	padding-bottom: 50px;
+	justify-content: center;
+	flex-direction: row;
+	display: inline-block;
+ 	background: white;
+ 	padding: 3%;
+ 	width: 20%;
+ 	height: 20%;
+ 	
+
+}
+
+.container .heading h3 {
+	font-size: 6em;
+	padding-bottom: 10px;
+}
+
+.container .heading h3 span {
+	font-weight: 100;
+}
+
+
+#drawings {
+  width: 33.1%; 
+  height: 20%;
+  padding: 3%; 
+  transition: filter 0.2s ease-in-out; 
+}
+
+#drawings:hover {
+  filter: brightness(80%); 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
