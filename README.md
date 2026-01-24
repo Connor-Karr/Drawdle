@@ -2,9 +2,6 @@
 
 A full-stack web application inspired by Wordle that challenges users to create, save, and manage daily drawings. Built with HTML5 Canvas, Express.js, JWT authentication, and SQLite database.
 
-![Drawdle](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-
 ## 🌟 Features
 
 ### Core Features
@@ -308,20 +305,6 @@ This project is licensed under the MIT License - feel free to use it for your ow
 - API uses middleware for authentication
 - Responsive design with CSS Grid and Flexbox
 
-## 🤝 Contributing
-
-Feel free to submit issues, create pull requests, or suggest new features!
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-1. Check the Troubleshooting section
-2. Review the API documentation
-3. Check the browser console for errors
-4. Ensure all dependencies are installed
-
 ---
-
-**Made with ❤️ by the Drawdle Team**
 
 Happy Drawing! 🎨
