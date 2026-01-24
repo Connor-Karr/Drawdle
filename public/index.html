@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawdle - Daily Drawing Challenge</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🎨 Drawdle</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link" id="navHome">Home</a>
+                <a href="#" class="nav-link" id="navGallery">My Gallery</a>
+                <a href="#" class="nav-link" id="navLogout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Container -->
+    <div class="auth-container" id="authContainer">
+        <div class="auth-box">
+            <h2 class="auth-title">Welcome to Drawdle</h2>
+            <p class="auth-subtitle">Draw something new every day!</p>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <h3>Login</h3>
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p class="auth-switch">Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <h3>Register</h3>
+                <div class="form-group">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container" id="appContainer" style="display: none;">
+        
+        <!-- Drawing View -->
+        <div class="view" id="drawingView">
+            <div class="container">
+                <!-- Daily Prompt -->
+                <div class="daily-prompt">
+                    <h2>Today's Prompt</h2>
+                    <p class="prompt-text" id="promptText">Loading...</p>
+                    <p class="prompt-date" id="promptDate"></p>
+                </div>
+
+                <!-- Drawing Canvas Area -->
+                <div class="canvas-container">
+                    <div class="canvas-wrapper">
+                        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+                    </div>
+                    
+                    <!-- Drawing Tools -->
+                    <div class="tools-panel">
+                        <div class="tool-section">
+                            <label>Brush Size</label>
+                            <input type="range" id="brushSize" min="1" max="50" value="5">
+                            <span id="brushSizeValue">5</span>
+                        </div>
+                        
+                        <div class="tool-section">
+                            <label>Color</label>
+                            <input type="color" id="colorPicker" value="#000000">
+                        </div>
+                        
+                        <div class="tool-section">
+                            <label>Tools</label>
+                            <div class="tool-buttons">
+                                <button class="tool-btn active" id="brushTool" title="Brush">✏️</button>
+                                <button class="tool-btn" id="eraserTool" title="Eraser">🧹</button>
+                                <button class="tool-btn" id="clearCanvas" title="Clear Canvas">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Drawing -->
+                <div class="save-section">
+                    <input type="text" id="drawingTitle" placeholder="Give your drawing a title..." class="title-input">
+                    <button class="btn btn-primary btn-large" id="saveDrawing">💾 Save Drawing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery View -->
+        <div class="view" id="galleryView" style="display: none;">
+            <div class="container">
+                <h2 class="gallery-title">My Gallery</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Gallery items will be inserted here -->
+                </div>
+                <div class="empty-state" id="emptyGallery" style="display: none;">
+                    <p>🎨</p>
+                    <h3>No drawings yet</h3>
+                    <p>Start creating your first masterpiece!</p>
+                    <button class="btn btn-primary" id="startDrawing">Create Drawing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing drawings -->
+    <div class="modal" id="drawingModal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDate"></p>
+            <canvas id="modalCanvas" width="800" height="600"></canvas>
+            <div class="modal-actions">
+                <button class="btn btn-danger" id="deleteDrawing">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
